@@ -1,0 +1,134 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and new features released in Bragly.
+---
+
+## Overview
+
+Bragly releases updates regularly to enhance your documentation experience. This changelog tracks all major and minor releases, highlighting new features, improvements, bug fixes, and breaking changes. Review it to understand what's new and plan your upgrades.
+
+Stay informed by subscribing to our release notifications or checking this page periodically.
+
+<Callout kind="info">
+  Enable notifications in your Bragly dashboard to get email alerts for new releases.
+</Callout>
+
+## Recent Releases
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added AI-powered content suggestions to help you draft documentation faster.
+- Introduced version pinning for docs pages, allowing you to lock content to specific releases.
+- New embeddable search widget for integrating Bragly search into your app.
+
+## Improvements
+
+- Enhanced search relevance with semantic matching for technical terms.
+- Reduced page load times by `>30%` through optimized asset delivery.
+- Improved mobile responsiveness for all documentation themes.
+
+## Bug Fixes
+
+- Fixed markdown rendering issues with nested lists and tables.
+- Resolved authentication token expiration during long editing sessions.
+- Corrected export failures for large documentation sites.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Custom domains support for publishing docs at your own URL.
+- Real-time collaboration with live cursors and conflict resolution.
+- Integrated analytics dashboard to track doc views and engagement.
+
+## Bug Fixes
+
+- Patched security vulnerability in webhook endpoints (CVE-2024-XXXX).
+- Fixed sidebar navigation jumping on theme switches.
+- Corrected API rate limiting inconsistencies.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core documentation editor with markdown, MDX, and visual editing modes.
+- Full-text search across all projects and pages.
+- API access for programmatic doc management.
+
+## Breaking Changes
+
+- Updated authentication to use JWT tokens instead of API keys.
+
+</Update>
+
+## Upgrading to the Latest Version
+
+Follow these steps to upgrade your Bragly instance safely.
+
+<Steps>
+  <Step title="Backup Your Data" icon="database">
+
+    Export your documentation projects to avoid data loss.
+
+    ```bash
+    bragly export --project my-docs --format zip
+    ```
+
+  </Step>
+  <Step title="Update Package" icon="download">
+
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+    npm update bragly@latest
+    ````
+    ````bash
+    yarn upgrade bragly@latest
+    ````
+    </CodeGroup>
+
+  </Step>
+  <Step title="Restart Services" icon="refresh-cw">
+
+    Restart your Bragly server and verify the version.
+
+    ```bash
+    bragly restart --check-version
+    ```
+
+  </Step>
+  <Step title="Test Changes" icon="check-circle">
+
+    Review the [upgrade notes](https://docs.bragly.com/quickstart#upgrading) and test key features.
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  After upgrading, clear your browser cache and regenerate static pages if using the static export feature.
+</Callout>
+
+## Upcoming Features
+
+Look forward to these enhancements in future releases:
+
+<Columns cols={3}>
+  <Card title="Advanced Theming" icon="palette" href="/docs/configuration">
+    Full CSS customization and theme inheritance.
+  </Card>
+  <Card title="Workflow Automation" icon="zap" href="/docs/guides">
+    GitHub Actions integration for CI/CD pipelines.
+  </Card>
+  <Card title="Multi-Language Docs" icon="globe" href="/docs/internationalization">
+    Built-in translation management.
+  </Card>
+</Columns>
+
+<Expandable title="How to Provide Feedback" default-open="true">
+  Share your thoughts on upcoming features via the feedback form in your dashboard or email `feedback@bragly.com`.
+</Expandable>

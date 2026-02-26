@@ -1,0 +1,154 @@
+---
+title: Getting Started with Bragly
+description: Set up your account, create your first documentation space, and start managing projects in just a few minutes.
+---
+
+## Prerequisites
+
+Before diving in, ensure you have the following ready:
+
+<Callout kind="info">
+- A modern web browser like Chrome, Firefox, or Safari
+- An email address for account verification
+- Optional: A team domain if managing collaborative projects
+</Callout>
+
+<Callout kind="tip">
+Bragly works best on desktop for initial setup, but is fully responsive on mobile.
+</Callout>
+
+## Create Your Account
+
+Sign up for Bragly in under a minute. Follow these steps to get started.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to `https://dashboard.bragly.com` and click **Sign Up**.
+  </Step>
+
+  <Step title="Enter Your Details" icon="user">
+    Provide your email, create a strong password, and complete the CAPTCHA.
+    
+    <Image
+      src="https://via.placeholder.com/800x400/3B82F6/white?text=Sign+Up+Form"
+      alt="Bragly sign up form with email and password fields"
+      width="800"
+      height="400"
+    />
+  </Step>
+
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from Bragly and click it to activate your account.
+  </Step>
+
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard, enter your credentials, and access your workspace.
+  </Step>
+</Steps>
+
+## Create a Documentation Space
+
+Documentation spaces organize your project docs. Create one now.
+
+<Steps>
+  <Step title="New Space" icon="plus">
+    From the dashboard, click **New Space** in the top right.
+  </Step>
+
+  <Step title="Configure Space" icon="settings">
+    Enter a name like `My Project Docs`, select visibility (`Private` or `Public`), and choose a color (`#3B82F6` for brand blue).
+  </Step>
+
+  <Step title="Save and Enter" icon="check-circle">
+    Click **Create**. You'll land in your new space's editor.
+  </Step>
+</Steps>
+
+## Add Your First Document
+
+Populate your space with a document using Markdown.
+
+<Tabs>
+  <Tab title="Markdown Editor" icon="edit-3">
+    Click **New Document**, title it `Introduction.mdx`, and paste this starter content:
+    
+````mdx
+# Welcome to My Project
+
+This is your first document in Bragly.
+````
+    
+    Save with `Ctrl+S` (`Cmd+S` on macOS).
+  </Tab>
+
+  <Tab title="Import from GitHub" icon="github">
+    Use the import tool:
+    
+    1. Click **Import** > **GitHub Repo**
+    2. Enter `your-username/my-docs-repo`
+    3. Select branch `main` and import
+    
+    Bragly syncs changes automatically.
+  </Tab>
+</Tabs>
+
+<CodeGroup tabs="MDX,JSON">
+````mdx
+---
+title: API Overview
+description: Endpoints for your project
+---
+
+## Authentication
+
+Use `Authorization: Bearer YOUR_API_KEY`
+````
+````json
+{
+  "spaceId": "space_123abc",
+  "docs": [
+    {
+      "id": "doc_456def",
+      "title": "Getting Started"
+    }
+  ]
+}
+````
+</CodeGroup>
+
+## Basic Navigation
+
+Master the interface quickly:
+
+| Section | Purpose | Shortcut |
+|---------|---------|----------|
+| Sidebar | Switch spaces and docs | `Ctrl+B` |
+| Editor | Write and preview MDX | `Ctrl+E` |
+| Preview | Live rendering | `Ctrl+P` |
+| Search | Find content | `Ctrl+K` |
+
+<Expandable title="Advanced Navigation Tips" default-open="false">
+- Pin frequently used docs to the top of the sidebar
+- Use `@mentions` for team collaboration: `@teammate review this`
+- Keyboard shortcuts: `?` opens the full list
+</Expandable>
+
+## Next Steps
+
+<Columns cols={3}>
+  <Card title="Authentication" icon="shield" href="/authentication">
+    Secure your API access and manage tokens.
+  </Card>
+
+  <Card title="Advanced Features" icon="sparkles" href="/configuration">
+    Customize workflows and integrations.
+  </Card>
+
+  <Card title="Help & Support" icon="help-circle" href="/faq">
+    Common questions and troubleshooting.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+Congratulations! You've set up Bragly. Explore your space and invite your team.
+</Callout>
