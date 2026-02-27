@@ -2,10 +2,14 @@
   "name": "Bragly",
   "colors": {
     "light": {
-      "brand": "#3B82F6"
+      "brand": "#7c3aed",
+      "heading": "#1a1a1a",
+      "text": "#374151"
     },
     "dark": {
-      "brand": "#87B1F6"
+      "brand": "#8b5cf6",
+      "heading": "#f2f2f2",
+      "text": "#c1c1c1"
     }
   },
   "navigation": {
@@ -121,5 +125,17 @@
         ]
       }
     ]
+  },
+  "template": "atlas",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-ef2dab49-fbf1-4ba9-8607-f05685f04980/doc-cf544259-5222-49af-ad24-854dc546cabe/1772199628680-jnav2fg473-Bragly-white.Bragly white?q=85&fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-ef2dab49-fbf1-4ba9-8607-f05685f04980/doc-cf544259-5222-49af-ad24-854dc546cabe/1772199616438-o5w46wzyyu-Bragly-logo.Bragly logo?q=85&fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-ef2dab49-fbf1-4ba9-8607-f05685f04980/doc-cf544259-5222-49af-ad24-854dc546cabe/1772199639165-48hr1p5kwlf-Favicon.png?q=85&fm=auto&auto=compress%2Cformat",
+  "navbar": {
+    "actions": {
+      "primary": {
+        "title": "Get Started",
+        "link": "https://app.bragly.io/auth/sign-up"
+      }
+    }
   }
 }
