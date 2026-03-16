@@ -20,39 +20,12 @@
         "groups": [
           {
             "group": "Getting Started",
-            "icon": "rocket",
-            "pages": [
-              {
-                "title": "Introduction",
-                "path": "introduction",
-                "icon": "home"
-              },
-              {
-                "title": "Quickstart",
-                "path": "quickstart",
-                "icon": "zap"
-              }
-            ]
-          },
-          {
-            "group": "Core Concepts",
             "icon": "layers",
             "pages": [
               {
-                "title": "Features",
-                "path": "features",
+                "title": "Coming soon",
+                "path": "coming-soon",
                 "icon": "file-text"
-              }
-            ]
-          },
-          {
-            "group": "Advanced",
-            "icon": "settings",
-            "pages": [
-              {
-                "title": "Integrations",
-                "path": "integrations",
-                "icon": "plug"
               }
             ]
           }
