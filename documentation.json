@@ -39,34 +39,47 @@
                 "path": "create-wall-of-love"
               },
               {
-                "group": "Everything about Forms",
-                "pages": [
-                  {
-                    "title": "Things you can do with a customer response in Bragly",
-                    "path": "post-response-actions"
-                  },
-                  {
-                    "title": "How to add your brand's logo to your form",
-                    "path": "logo-on-form"
-                  },
-                  {
-                    "title": "How to create a form on Bragly?",
-                    "path": "create-form"
-                  },
-                  {
-                    "title": "How to manage your Forms' language",
-                    "path": "forms-language"
-                  },
-                  {
-                    "title": "How to test your form",
-                    "path": "test-form"
-                  }
-                ]
-              },
-              {
                 "title": "Coming soon",
                 "path": "coming-soon",
                 "icon": "file-text"
+              }
+            ]
+          },
+          {
+            "group": "Everything about Forms",
+            "pages": [
+              {
+                "title": "Things you can do with a customer response in Bragly",
+                "path": "post-response-actions"
+              },
+              {
+                "title": "How to add your brand's logo to your form",
+                "path": "logo-on-form"
+              },
+              {
+                "title": "How to create a form on Bragly?",
+                "path": "create-form"
+              },
+              {
+                "title": "How to manage your Forms' language",
+                "path": "forms-language"
+              },
+              {
+                "title": "How to test your form",
+                "path": "test-form"
+              }
+            ]
+          },
+          {
+            "group": "All about Widgets",
+            "pages": [
+              {
+                "title": "How to build a widget?",
+                "path": "build-widget"
+              },
+              {
+                "title": "How does a Widget work?",
+                "path": "widget-intro"
               }
             ]
           }
