@@ -74,12 +74,16 @@
             "group": "All about Widgets",
             "pages": [
               {
+                "title": "How does a Widget work?",
+                "path": "widget-intro"
+              },
+              {
                 "title": "How to build a widget?",
                 "path": "build-widget"
               },
               {
-                "title": "How does a Widget work?",
-                "path": "widget-intro"
+                "title": "How to use tags to customize widgets",
+                "path": "tags-widgets"
               }
             ]
           }
