@@ -39,19 +39,14 @@
                 "path": "create-wall-of-love"
               },
               {
-                "title": "Coming soon",
-                "path": "coming-soon",
-                "icon": "file-text"
+                "title": "Things you can do with a customer response in Bragly",
+                "path": "post-response-actions"
               }
             ]
           },
           {
             "group": "Everything about Forms",
             "pages": [
-              {
-                "title": "Things you can do with a customer response in Bragly",
-                "path": "post-response-actions"
-              },
               {
                 "title": "How to add your brand's logo to your form",
                 "path": "logo-on-form"
