@@ -23,9 +23,62 @@
             "icon": "layers",
             "pages": [
               {
-                "title": "Coming soon",
-                "path": "coming-soon",
-                "icon": "file-text"
+                "title": "How create your Bragly account?",
+                "path": "account-creation"
+              },
+              {
+                "title": "Building your brand personal on Bragly",
+                "path": "building-brand-persona"
+              },
+              {
+                "title": "How to import reviews from Google on Bragly?",
+                "path": "import-google-reviews"
+              },
+              {
+                "title": "How to create a wall of love",
+                "path": "create-wall-of-love"
+              },
+              {
+                "title": "Things you can do with a customer response in Bragly",
+                "path": "post-response-actions"
+              }
+            ]
+          },
+          {
+            "group": "Everything about Forms",
+            "pages": [
+              {
+                "title": "How to add your brand's logo to your form",
+                "path": "logo-on-form"
+              },
+              {
+                "title": "How to create a form on Bragly?",
+                "path": "create-form"
+              },
+              {
+                "title": "How to manage your Forms' language",
+                "path": "forms-language"
+              },
+              {
+                "title": "How to test your form",
+                "path": "test-form"
+              }
+            ]
+          },
+          {
+            "group": "All about Widgets",
+            "pages": [
+              {
+                "title": "How does a Widget work?",
+                "path": "widget-intro"
+              },
+              {
+                "title": "How to build a widget?",
+                "path": "build-widget"
+              },
+              {
+                "title": "How to use tags to customize widgets",
+                "path": "tags-widgets"
               }
             ]
           }
