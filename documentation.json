@@ -92,39 +92,6 @@
             "title": "Help Center",
             "path": "help-center",
             "icon": "home"
-          },
-          {
-            "group": "FAQs",
-            "icon": "help-circle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Getting Started FAQ",
-                "path": "help-center/faq/getting-started"
-              }
-            ]
-          },
-          {
-            "group": "Troubleshooting",
-            "icon": "alert-triangle",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Cannot Create Project",
-                "path": "help-center/troubleshooting/cannot-create-project"
-              }
-            ]
-          },
-          {
-            "group": "Guides",
-            "icon": "book-open",
-            "expandable": false,
-            "pages": [
-              {
-                "title": "Create and Share Documentation",
-                "path": "help-center/guides/create-and-share-doc"
-              }
-            ]
           }
         ]
       },
