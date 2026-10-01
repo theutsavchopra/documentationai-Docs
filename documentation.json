@@ -81,6 +81,16 @@
                 "path": "tags-widgets"
               }
             ]
+          },
+          {
+            "group": "AI Connect",
+            "icon": "sparkles",
+            "pages": [
+              {
+                "title": "How to connect Bragly to your AI tools (AI Connect)",
+                "path": "ai-connect"
+              }
+            ]
           }
         ]
       },

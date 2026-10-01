@@ -1,0 +1,153 @@
+---
+title: "How to connect Bragly to your AI tools (AI Connect)"
+description: "Connect Bragly to Claude, Cursor, and other MCP-compatible AI tools to let your assistant read reviews, sentiment, and widgets — and perform approved actions like tagging."
+---
+
+## Connect Bragly to your AI tools
+
+Connect Bragly to Claude, Cursor, and other AI tools that support the Model Context Protocol (MCP). Your AI assistant can access reviews, sentiment data, forms, widgets, and Walls of Love, then perform approved actions such as tagging reviews and managing widgets.
+
+<Callout kind="info">
+
+AI Connect is available on paid plans. If your plan does not include it, the AI Connect page shows an upgrade prompt with a link to view available plans.
+
+</Callout>
+
+## How to set up AI Connect
+
+<Steps>
+
+<Step title="Open AI Connect">
+
+From your project dashboard, select **AI Connect** from the left-hand menu.
+
+</Step>
+
+<Step title="Copy your Server URL">
+
+On the AI Connect page, copy the **Server URL** shown in the connection card. This URL connects your AI tool to Bragly.
+
+</Step>
+
+<Step title="Add the server to your AI tool">
+
+In Claude, Cursor, or another app that supports remote MCP servers, add a custom connector or server and paste the **Server URL**.
+
+</Step>
+
+<Step title="Authorize access">
+
+The first time each client connects, sign in with your Bragly account. The authorization screen shows which AI tool is requesting access and what it can do.
+
+Choose **Allow Access** to grant permission. Choose **Deny** if you do not want to connect the client.
+
+</Step>
+
+<Step title="Start using it">
+
+Once connected, your AI assistant can interact with your Bragly data through the available tools.
+
+</Step>
+
+</Steps>
+
+## Setup for specific clients
+
+### Claude Code
+
+The AI Connect page provides a ready-to-use command for Claude Code. Copy the command from the **Claude Code** block and run it in your terminal.
+
+The command adds Bragly as a remote MCP server for Claude Code. After it completes, connect from Claude Code and authorize access with your Bragly account.
+
+### Claude Desktop
+
+The AI Connect page provides a JSON configuration block for Claude Desktop. Copy the block from **Claude Desktop (Config File)** and add it to your Claude Desktop configuration file.
+
+Restart Claude Desktop after saving the configuration. When Claude Desktop connects to Bragly, sign in with your Bragly account and approve the authorization request.
+
+<Callout kind="tip">
+
+You can revoke access at any time from your AI tool's connector settings.
+
+</Callout>
+
+## What your AI tools can access
+
+Every tool is grouped by the type of Bragly data it uses and whether it reads or changes that data.
+
+### Accounts
+
+**Read**
+
+- List the teams you belong to.
+- View an account overview with review totals, average rating, visibility split, sentiment, and NPS.
+
+### Reviews
+
+**Read**
+
+- Search and filter reviews by rating, sentiment, status, source, and date.
+- Retrieve individual reviews, including their tags.
+
+**Write**
+
+- Apply tags to reviews matching a filter or topic. If the tag does not exist, Bragly creates it.
+- Hide or publish individual reviews.
+- Run sentiment classification on reviews that have text but have not been classified yet.
+
+### NPS
+
+**Read**
+
+- View the NPS score with promoter, passive, and detractor counts.
+- Filter results by date.
+- View an NPS breakdown by source.
+
+### Collections
+
+**Read**
+
+- List collection forms with their response counts.
+- List embeddable widgets.
+- List Walls of Love.
+
+**Write**
+
+- Create, update, or delete widgets.
+- Change a widget's layout, sources, keywords, and design configuration.
+- Update brand kit elements such as the logo, colors, and fonts used across widgets and Walls of Love.
+
+### Settings
+
+**Read**
+
+- List review tags and the number of reviews using each tag.
+- List configured webhook endpoints, including their URLs, subscribed events, and active state. Signing secrets are never returned.
+
+**Write**
+
+- Create tags.
+- Rename existing tags.
+- Delete tags. Deleting a tag also removes it from every review where it was applied.
+
+<Callout kind="info">
+
+Every tool is scoped to the teams you belong to. Your AI assistant can only access data for teams connected to your Bragly account.
+
+</Callout>
+
+## Authorization and security
+
+The first time an AI client connects, Bragly shows an authorization screen with the client name, your Bragly account email, and the access being requested.
+
+Review the request before choosing an action:
+
+- Choose **Allow Access** to connect the AI client.
+- Choose **Deny** to reject the request.
+- Revoke access later from the AI tool's connector settings.
+
+<Callout kind="alert">
+
+Always review which tools and permissions an AI client is requesting before granting access. Only connect AI tools you trust.
+
+</Callout>
