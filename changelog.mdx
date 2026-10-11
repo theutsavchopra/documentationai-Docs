@@ -14,6 +14,34 @@ Stay informed by subscribing to our release notifications or checking this page 
 
 ## Recent Releases
 
+<Update label="October 2026" description="Product updates" tags={["feature","improvement","bugfix"]}>
+  ## New Features
+
+  - **EmDash integration** lets you connect your Bragly account directly inside EmDash, browse your available widgets and Walls of Love, and configure SEO review-star markup — all without touching code.
+  - **EmDash widget block** adds a drag-and-drop Bragly Widget block to the EmDash editor, with support for a site-wide floating widget scoped to all pages, content pages, or just the home page. [Learn about widgets](/widget-intro).
+  - **WordPress plugin** connects Bragly to your WordPress site with a settings screen, a block editor widget, shortcode support for classic editors and page builders, floating widget placement, and SEO review-star markup.
+  - The WordPress block lets connected users pick a widget from their account, or paste a widget ID or embed code for a quick setup.
+  - WordPress shortcode support lets you embed widgets with `[bragly_widget id="..."]` on any page or post, including classic editors and page builders.
+  - **SEO review stars** in both EmDash and WordPress add structured data (JSON-LD) to eligible pages so search engines can display star ratings in results. Choose where markup appears: home page, content pages, or all pages. [Learn about Walls of Love](/create-wall-of-love).
+
+  ## Updates
+
+  - **NPS and sentiment analytics now account for all reviews.** Previously, accounts with more than 1,000 reviews could see incomplete NPS scores, sentiment distributions, and AI insights. All reviews are now included.
+  - **Collection forms now enforce your plan's review limit.** When the limit is reached, visitors see a "not accepting new reviews" message instead of a submission that exceeds your allowance. [Learn how to create a form](/create-form).
+  - **Search now handles special characters literally.** Searching for terms containing commas, parentheses, quotes, or `%` returns the right results instead of being interpreted as filter syntax.
+  - **Lifetime plans are granted only after payment succeeds.** Pending or failed payments no longer prematurely unlock lifetime features.
+
+  ## Bug Fixes
+
+  - Subscription cancellation emails are now sent only once per cancellation — no more duplicate notifications from unrelated subscription updates.
+  - The browser extension no longer errors when paginating past the end of the review list after reviews have been deleted.
+  - Custom domains can no longer display another account's Wall of Love or collection form via a foreign slug or ID — content is now strictly scoped to the domain owner.
+  - Team members can no longer escalate their own role or change another member's role. Legitimate role management through authorized flows continues to work.
+  - Team members can no longer view invitation details above their permission level.
+  - Widget and Wall of Love view counts are now isolated per account — one team cannot query another team's analytics.
+  - Webhook delivery and image proxying now block private and internal network addresses, preventing outbound requests to internal services.
+</Update>
+
 <Update label="September 2026" description="Product updates" tags={["feature"]}>
   ## New Features
 
