@@ -14,6 +14,27 @@ Stay informed by subscribing to our release notifications or checking this page 
 
 ## Recent Releases
 
+<Update label="October 2026" description="Product updates" tags={["feature","improvement","bugfix"]}>
+  ## New Features
+
+  - **EmDash integration** — connect Bragly to your EmDash site using two plugins: Bragly Reviews (from the EmDash plugin directory) and Bragly Widgets (installed via the `@braglyio/emdash-widgets` npm package). Your existing Bragly widgets and [Walls of Love](/create-wall-of-love) work automatically—no separate integration account needed.
+  - **EmDash setup page** — a guided page in Bragly (accessible from the team sidebar and command palette) walks you through connecting your EmDash site, installing the widget package, enabling review stars, and adding widgets to your content.
+  - **Connect from EmDash** — generate a Bragly access token, paste it under Plugins → Bragly in EmDash, and instantly see your connected team, available [widgets](/build-widget), and Walls of Love with their IDs and recommended placement.
+  - **Review stars for EmDash** — optionally enable rich-snippet review markup on your EmDash pages so search engines may display star ratings. Choose the review source (a widget or Wall of Love) and where the markup appears (home page, content pages, or all pages). The UI warns you when markup is unavailable due to plan or source limitations.
+  - **Inline widget block** — EmDash editors can insert a Bragly Widget block in rich-text fields by pasting a widget ID, widget URL, or full embed snippet. The block renders the widget inline and supports a configurable fallback height.
+  - **Floating widgets on EmDash** — configure a site-wide floating widget under Plugins → Bragly Widgets → Settings, with scope options for all pages, content pages only, or home page only.
+  - **Dashboard status card** — EmDash now shows a Bragly Reviews card with connection status, connected team, and review-star enablement at a glance.
+
+  ## Updates
+
+  - The access-token revocation warning now explicitly states that revoking a token disables everything using it, including the Chrome extension and any connected EmDash sites.
+  - Widget and Wall of Love discovery in EmDash now shows names, layouts, IDs, and recommended placement with a refresh action to pull the latest data.
+
+  ## Bug Fixes
+
+  - Invalid, expired, or revoked access tokens now produce a clear connection error in EmDash instead of being saved silently.
+</Update>
+
 <Update label="September 2026" description="Product updates" tags={["feature"]}>
   ## New Features
 
