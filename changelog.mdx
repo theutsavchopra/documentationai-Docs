@@ -14,6 +14,35 @@ Stay informed by subscribing to our release notifications or checking this page 
 
 ## Recent Releases
 
+<Update label="October 2026" description="Admin panel redesign" tags={["feature","improvement","bugfix"]}>
+  ## New Features
+
+  - **Dashboard time-range filtering** lets you view metrics across 7, 30, 90, 180, or 365 days. All headline cards, growth charts, and distribution data update together based on the selected range.
+  - **Estimated MRR and growth comparisons** now appear on the dashboard, showing period-over-period percentage changes for paying teams, trials, new users, and new teams.
+  - **NPS processing health panel** on the Subscriptions & Trials page shows how many reviews have been processed, the backlog count, and overall system status (healthy, degraded, or backlogged).
+  - **Detailed team billing view** now surfaces trial countdowns, past-due and canceled statuses, renewal dates, cancellation warnings, and lifetime purchase details — all in one organized panel.
+
+  ## Updates
+
+  - Admin navigation reorganized into grouped sections (Overview, Customers, Billing, Support, Insights, Maintenance) with icons, active-route highlighting, and a collapsible sidebar.
+  - Pages renamed for clarity: **Plans** (formerly Plan Settings), **Billing Models** (formerly Plan Type Settings), **Subscriptions & Trials** (formerly Operations Monitor), and **Feedback** (formerly Feedbacks).
+  - Team profile page redesigned with a compact header, organized billing/usage/members sections, and a prominent Assign Plan action.
+  - User profile page now displays admin actions (Reset Password, Impersonate, Ban, Reactivate, Delete) with a visible Banned badge when applicable.
+  - Dashboard growth chart consolidated into a single view that switches between Users, Teams, and Reviews with daily and cumulative totals.
+  - Plan distribution renamed to "Teams by Plan" with a distinct Trial category.
+  - Review Import API usage moved into a collapsible section so it no longer dominates the dashboard.
+  - Loading skeletons and retryable error screens now replace generic spinners and inconsistent error messages across all admin pages.
+  - "Teams" terminology standardized throughout the admin panel, replacing the older "Accounts" labels.
+
+  ## Bug Fixes
+
+  - User ban status now reflects the active ban period instead of relying on a stale timestamp.
+  - Lifetime billing now correctly takes precedence over a concurrent subscription in displayed plan information.
+  - Dashboard data is now consistently filtered by the selected time range instead of mixing all-time and period-based values.
+  - Removed obsolete account-management routes that led to deleted pages.
+  - Empty states now clearly distinguish "no data exists yet" from "no results match the current filter."
+</Update>
+
 <Update label="September 2026" description="Product updates" tags={["feature"]}>
   ## New Features
 
