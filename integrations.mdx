@@ -27,6 +27,36 @@ Connect Bragly to external apps for notifications, version control, and automati
   </Card>
 </Columns>
 
+## Discord Notifications
+
+Configure Discord in **Integrations → Discord** as a separate integration from generic Webhooks. Connect a Discord channel by creating a Discord webhook, then add its URL in Bragly. Bragly verifies the URL before connecting it.
+
+### Notification types
+
+Discord supports notifications for:
+
+- **Form submissions:** Receive notifications when someone submits a form. Limit these notifications to selected forms.
+- **Autosynced reviews:** Receive notifications when reviews are autosynced.
+- **Deleted reviews:** Receive notifications when reviews are deleted. This notification is off for new connections.
+
+New connections enable form submissions and Autosync notifications by default. Autosync and multi-review deletion operations send one batch summary, while deleting one review sends an individual message.
+
+### Customize messages
+
+Customize the message and embed for each event, then preview the result before saving. **Send Test Message** sends the current unsaved design, so you can verify changes before applying them.
+
+If a Discord webhook becomes disconnected, reconnect it with a replacement URL. Bragly retains the existing configuration when you replace the URL.
+
+<Callout kind="info">
+Discord is available only on plans with Webhooks access.
+</Callout>
+
+## Shopify Billing and Review Requests
+
+For teams with an active Shopify connection, billing is managed through the Shopify App Store. The Bragly billing page shows your current plan and directs you to Shopify admin to change your plan, upgrade, downgrade, or cancel.
+
+If your team's plan does not include review collection, Bragly does not email customers after an order. The Shopify integration page shows **Upgrade to Send Review Requests** with a **View Plans** action.
+
 ## Setting Up an Integration
 
 Follow these steps to connect GitHub as an example.
