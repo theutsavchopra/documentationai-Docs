@@ -81,6 +81,16 @@
                 "path": "tags-widgets"
               }
             ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              {
+                "title": "Zapier",
+                "path": "zapier"
+              }
+            ],
+            "icon": "blocks"
           }
         ]
       },

@@ -1,0 +1,71 @@
+---
+title: How to Connect Bragly to Zapier
+description: >-
+  Connect Bragly to Zapier to send new reviews to 7,000+ apps, and to add
+  reviews to Bragly from your other tools.
+---
+> The Bragly Zapier app is in beta. Zapier needs a Bragly Team on the **Pro Plan** or above. You can connect your account on any Plan, but Zap steps return an upgrade error until the Team is on Pro.
+
+## **Connect your account**
+
+1\. In Bragly, open **Integrations → Zapier** and click **Connect Zapier**. Or search for **Bragly** in Zapier when you add a step.
+
+2\. Sign in to Bragly and approve access.
+
+3\. Zapier names the connection after your email. One connection covers every Team you belong to.
+
+## **Pick a Team**
+
+Every Bragly trigger, action and search starts with a **Team** field. Pick the Team the Zap should read from or write to. To work with more than one Team, make one Zap per Team.
+
+## **Triggers**
+
+| Trigger               | When it fires                                                                                                                |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| New Form Review       | Someone submits a review through a collection form. Set **Form** to limit it to one form, or leave it empty for every form.  |
+| New Autosynced Review | Autosync brings in a new review from a connected platform, like Google.                                                      |
+| Review Deleted        | A review is deleted. The output is the review as it was before it was deleted.                                               |
+
+Triggers are instant. Bragly sends each event to Zapier as it happens. When you turn a Zap on, its webhook appears under **Integrations → Zapier → Zapier Webhooks**, and turning the Zap off removes it.
+
+## **Actions**
+
+| Action               | What it does                                                                                                                                                                                                                 |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Create Review        | Adds a review collected in another tool. **Reviewer Name** is required. The review lands **pending (hidden)**, so you approve it before it shows on walls of love and widgets. It counts toward your imported-reviews limit. |
+| Update Review Status | Sets a review to **Public** or **Pending (Hidden)**.                                                                                                                                                                         |
+| Add Tag to Review    | Tags a review by name, and creates the tag if the Team doesn't have it yet.                                                                                                                                                  |
+
+Reviews created by Zapier don't fire Bragly triggers, so a Zap can't loop on its own output.
+
+## **Search**
+
+**Find Review** returns the newest review whose reviewer name, email or message contains your search text. Use it before **Update Review Status** or **Add Tag to Review** when the trigger isn't a Bragly trigger.
+
+## **Review fields**
+
+Every trigger, action and search outputs the same review fields: ID, Team ID, Source, Message, Rating (0–5), Reviewer Name, Reviewer Profile Image, Review URL, Company Name, Job Title or Tagline, Email, Website, Testimonial Video URL, Status, Review Date, Created At, From Autosync, Form ID and Form Name.
+
+## **Ideas to start with**
+
+\- Post new form reviews to Slack
+
+\- Log every review in Google Sheets
+
+\- Add reviewers to HubSpot as contacts
+
+\- Turn Typeform entries into Bragly reviews
+
+\- Create a Trello card for reviews under four stars
+
+## **Troubleshooting**
+
+\- **"Plan required" error:** the Team isn't on the Pro Plan. Upgrade it from **Billing** in Bragly.
+
+\- **"Rate limited" error:** Bragly allows 120 requests a minute per user. Zapier retries automatically.
+
+\- **A Zap stopped triggering:** check that its webhook is still listed under **Integrations → Zapier**. If it's missing, turn the Zap off and on again.
+
+\- **Team missing from the dropdown:** you need to be a member of the Team. Ask an owner to invite you, then refresh the field in Zapier.
+
+Questions or feedback on the beta? Use **Feedback** in the Bragly app.
