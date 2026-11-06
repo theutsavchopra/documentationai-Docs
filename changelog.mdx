@@ -14,6 +14,24 @@ Stay informed by subscribing to our release notifications or checking this page 
 
 ## Recent Releases
 
+<Update label="November 2026" description="Product updates" tags={["improvement","bugfix"]}>
+  ## Updates
+
+  - Review imports are more reliable: if a source can't be reached on the first attempt, Bragly now automatically retries through another route, so Trustpilot and other imports that used to fail often succeed. The flow is unchanged — pick a source, search your business, set your filters, and fetch ([see the import walkthrough](/import-google-reviews)).
+  - Loading states no longer flash: placeholders appear only when a page actually takes a moment to load, then fade in gently. Fast page changes show no placeholder at all.
+  - Loading placeholders now match the real page layouts — dashboard metric cards, review rows, tables on desktop and card lists on mobile — so content no longer jumps around when it arrives.
+  - Pages you recently visited open instantly when you go back or forward, instead of re-rendering from scratch.
+  - The top navigation progress bar is thinner, appears only after a short delay, and no longer restarts when you click the page you are already on.
+
+  ## Bug Fixes
+
+  - Fixed loading screens flashing during quick navigation.
+  - Fixed layout shift when dashboard tables, lists and review rows finished loading.
+  - Fixed the Reviews page showing a bare "Loading…" spinner instead of row placeholders.
+  - Fixed loading animations that ignored the reduced-motion accessibility setting.
+  - Fixed long account and team names squeezing the plan badge and arrow out of the account switcher.
+</Update>
+
 <Update label="September 2026" description="Product updates" tags={["feature"]}>
   ## New Features
 
