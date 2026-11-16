@@ -14,6 +14,34 @@ Stay informed by subscribing to our release notifications or checking this page 
 
 ## Recent Releases
 
+<Update label="November 2026" description="Custom domains" tags={["feature","improvement","bugfix"]}>
+  <Callout kind="alert" collapsed="false">
+    If you added a custom domain before this release and it is still pending, add the `_bragly-verify` TXT record shown in Bragly. A CNAME record alone no longer verifies a domain.
+  </Callout>
+
+  ## New Features
+
+  - **Domain status at a glance:** each custom domain now shows Pending, Verified, or Failed, together with the exact DNS records it needs.
+  - **In-app warnings before a domain stops working:** missing DNS records or a lapsed plan are flagged per domain, with the date it will be released.
+  - The custom domains page shows how many domains your plan allows (for example "2 of 3"), and the Add button explains when the limit is reached.
+
+  ## Updates
+
+  - Verifying a domain now requires a TXT record as well as the CNAME: add the `_bragly-verify` TXT record with the value shown in Bragly.
+  - Only Team owners can add, verify, or remove custom domains or change the default target. Other members can view the page read-only.
+  - Verified domains now serve both [Wall of Love](/create-wall-of-love) pages and [Collection forms](/create-form). The previous "forms only" and "walls only" scope is gone.
+  - Root domains are no longer supported. Use a subdomain such as `reviews.yourbrand.com`.
+  - Forms and walls in the same Team now share one URL slug space. If a slug is taken, the editor says whether a form or a wall already uses it.
+  - Domain health is checked daily: a domain whose DNS records disappear for 7 days is marked Failed, and a domain whose Team loses plan access goes offline immediately and is released after 14 days (upgrading brings it back).
+
+  ## Bug Fixes
+
+  - Fixed an issue where a domain could be marked verified without proof that you own it.
+  - Removing a domain, or deleting a Team, now fully releases the domain instead of leaving it pointed at a page that no longer exists.
+  - Hostnames that belong to Bragly or to its hosting provider can no longer be added.
+  - Form links now show pending domains with a Pending or Failed badge instead of hiding them.
+</Update>
+
 <Update label="September 2026" description="Product updates" tags={["feature"]}>
   ## New Features
 
@@ -207,4 +235,3 @@ Stay informed by subscribing to our release notifications or checking this page 
 <Expandable title="How to Provide Feedback" default-open="true">
   Share your thoughts on upcoming features via the feedback form in your dashboard or email `hello@bragly.com`.
 </Expandable>
-
