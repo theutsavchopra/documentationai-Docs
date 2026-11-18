@@ -20,11 +20,10 @@ Every Bragly trigger, action and search starts with a **Team** field. Pick the T
 
 ## **Triggers**
 
-| Trigger               | When it fires                                                                                                                |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| New Form Review       | Someone submits a review through a collection form. Set **Form** to limit it to one form, or leave it empty for every form.  |
-| New Autosynced Review | Autosync brings in a new review from a connected platform, like Google.                                                      |
-| Review Deleted        | A review is deleted. The output is the review as it was before it was deleted.                                               |
+| Trigger         | When it fires                                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New Form Review | Someone submits a review through a collection form. Set **Form** to limit it to one form, or leave it empty for every form.                                            |
+| Review Deleted  | A review is deleted. The output is the review as it was before it was deleted. Deleted reviews can't be fetched, so test samples in the Zap editor are recent reviews. |
 
 Triggers are instant. Bragly sends each event to Zapier as it happens. When you turn a Zap on, its webhook appears under **Integrations → Zapier → Zapier Webhooks**, and turning the Zap off removes it.
 
