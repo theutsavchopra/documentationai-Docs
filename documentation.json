@@ -94,6 +94,28 @@
         ]
       },
       {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Overview",
+            "pages": [
+              {
+                "title": "Bragly API",
+                "path": "api-reference/introduction"
+              }
+            ]
+          },
+          {
+            "group": "Endpoints",
+            "openapi": "https://app.bragly.io/api/v1/openapi.json",
+            "hidden-apis": [
+              "GET /openapi.json"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Help Center",
         "icon": "help-circle",
         "pages": [

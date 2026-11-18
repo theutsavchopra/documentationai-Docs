@@ -1,0 +1,112 @@
+---
+title: Bragly API
+description: >-
+  The Bragly Public API: authentication, endpoints, errors and webhooks. The
+  Bragly Zapier app is built on these same endpoints.
+---
+The Bragly Public API lets you read and write a Team's reviews and subscribe to review events. Base URL:
+
+```
+https://app.bragly.io/api/v1
+```
+
+The full machine-readable spec (OpenAPI 3.1) is at `https://app.bragly.io/api/v1/openapi.json`. Every endpoint is documented on the pages in this section.
+
+## Authentication
+
+The API uses OAuth 2.1 (authorization code with PKCE).
+
+| Step | URL |
+| --- | --- |
+| Authorize | `https://szqnxuacqxlfeyhtcran.supabase.co/auth/v1/oauth/authorize` |
+| Token (exchange and refresh) | `https://szqnxuacqxlfeyhtcran.supabase.co/auth/v1/oauth/token` |
+
+Send the access token on every request:
+
+```
+Authorization: Bearer <access_token>
+```
+
+The token acts as the user who approved access, so it only sees that user's Teams. There are no scopes. Use the refresh token to get a new access token when a request returns `401`.
+
+## Teams and Plans
+
+Team endpoints take the Team in the path as `{team}`: its `id` or `slug` from **List Teams**. They need a Team on the **Pro Plan** or above, otherwise they return `403` with code `plan_required`. `GET /me` and `GET /teams` work on every Plan.
+
+## Endpoints
+
+| Method | Path | What it does |
+| --- | --- | --- |
+| GET | `/me` | The current user and their Teams |
+| GET | `/teams` | List the user's Teams |
+| GET | `/teams/{team}/reviews` | List reviews, newest first (optional `form_id` filter) |
+| POST | `/teams/{team}/reviews` | Create a review. It lands pending (hidden) |
+| GET | `/teams/{team}/reviews/search` | Find reviews whose reviewer name, email or message contains `q` |
+| GET | `/teams/{team}/reviews/{id}` | Get one review |
+| PATCH | `/teams/{team}/reviews/{id}` | Set a review's `status` to `public` or `hidden` |
+| POST | `/teams/{team}/reviews/{id}/tags` | Tag a review by name, creating the tag if needed |
+| GET | `/teams/{team}/forms` | List the Team's collection forms |
+| POST | `/teams/{team}/hooks` | Subscribe a webhook URL to an event |
+| DELETE | `/teams/{team}/hooks/{id}` | Unsubscribe a webhook |
+
+## Zapier app mapping
+
+| Zapier step | API calls |
+| --- | --- |
+| Connection test and label | `GET /me`, which returns `{ "user": { "id", "email" }, "teams": [...] }`. The label is `user.email` |
+| Team dropdown | `GET /teams` |
+| New Form Review (trigger) | Subscribe: `POST /teams/{team}/hooks` with event `reviews.form.submitted`. Unsubscribe: `DELETE /teams/{team}/hooks/{id}`. Samples: `GET /teams/{team}/reviews` |
+| Review Deleted (trigger) | Subscribe: `POST /teams/{team}/hooks` with event `reviews.deleted`. Unsubscribe: `DELETE /teams/{team}/hooks/{id}`. Samples: `GET /teams/{team}/reviews` (deleted reviews can't be fetched, so samples are recent reviews) |
+| Form dropdown | `GET /teams/{team}/forms` |
+| Create Review (action) | `POST /teams/{team}/reviews` |
+| Update Review Status (action) | `PATCH /teams/{team}/reviews/{id}` |
+| Add Tag to Review (action) | `POST /teams/{team}/reviews/{id}/tags` |
+| Find Review (search) | `GET /teams/{team}/reviews/search` |
+
+## The Review object
+
+Every review endpoint and webhook returns the same Review: `id`, `account_id` (Team ID), `source`, `message`, `rating` (0–5), `reviewer_name`, `reviewer_profile_image`, `review_url`, `company_name`, `job_title_or_tagline`, `email`, `website`, `testimonial_video_url`, `status` (`public` or `hidden`), `review_date`, `created_at`, `from_auto_sync`, `form_id` and `form_name`.
+
+## Pagination
+
+Lists are newest first. Pass `limit` (default 25, max 100) and, for the next page, the previous response's `next_cursor` as `cursor`. `next_cursor` is `null` on the last page.
+
+## Rate limits
+
+120 requests per minute per user. Over the limit returns `429` with code `rate_limited` and a `Retry-After` header in seconds.
+
+## Errors
+
+Every error has the body `{ "error": { "code", "message", "reference" } }`. `message` is safe to show to users. `reference` is only on `unexpected` errors; quote it to support.
+
+| Code | Status |
+| --- | --- |
+| `validation` | 400 |
+| `unauthorized` | 401 |
+| `forbidden`, `plan_required`, `plan_limit` | 403 |
+| `not_found` | 404 |
+| `conflict` | 409 |
+| `rate_limited` | 429 |
+| `unexpected` | 500 |
+
+## Webhooks
+
+`POST /teams/{team}/hooks` with `{ "url", "event" }` subscribes a URL. Events:
+
+| Event | When it fires |
+| --- | --- |
+| `reviews.form.submitted` | A review is submitted through one of the Team's forms |
+| `reviews.deleted` | A review is deleted. `data` is the review as it was before deletion |
+
+Each delivery is a `POST` with this body:
+
+```json
+{
+  "id": "event id, the same for every webhook",
+  "event": "reviews.deleted",
+  "occurred_at": "2026-10-01T10:00:00.000Z",
+  "data": { "...": "the Review object" }
+}
+```
+
+Deliveries are signed. `x-feedspace-timestamp` holds Unix seconds and `x-feedspace-signature` holds the hex HMAC-SHA256 of `<timestamp>.<raw body>`, keyed by the webhook's signing secret. Respond with any `2xx` to acknowledge, or `410 Gone` to unsubscribe.
